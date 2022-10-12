@@ -3,7 +3,7 @@ package com.example.reto3.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.reto3.entities.Product;
+import com.example.reto3.entities.Client;
 import com.example.reto3.repository.ProductRepository;
 
 import java.util.List;
@@ -15,20 +15,20 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public List<Product> getAll(){
+    public List<Client> getAll(){
         return productRepository.getAll();
     }
 
-    public Optional<Product> getProduct(int id){
+    public Optional<Client> getProduct(int id){
         return productRepository.getProduct(id);
     }
 
-    public Product save(Product p){
+    public Client save(Client p){
         if(p.getId()==null){
             return productRepository.save(p);
         }
         else{
-            Optional<Product> e = productRepository.getProduct(p.getId());
+            Optional<Client> e = productRepository.getProduct(p.getId());
             if(e.isPresent()){
                 return p; 
             }
@@ -38,9 +38,9 @@ public class ProductService {
         }
     }
 
-    public Product update(Product p){
+    public Client update(Client p){
         if(p.getId()!=null){
-            Optional<Product> q = productRepository.getProduct(p.getId());
+            Optional<Client> q = productRepository.getProduct(p.getId());
             if(q.isPresent()){
                 if(p.getName()!=null){
                     q.get().setName(p.getName());
@@ -71,7 +71,7 @@ public class ProductService {
 
     public boolean delete(int id){
         boolean flag = false;
-        Optional<Product>p=productRepository.getProduct(id);
+        Optional<Client>p=productRepository.getProduct(id);
         if(p.isPresent()){
             productRepository.delete(p.get());
             flag = true;

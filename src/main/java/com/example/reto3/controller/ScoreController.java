@@ -9,23 +9,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.reto3.entities.Product;
-import com.example.reto3.service.ProductService;
+import com.example.reto3.entities.Score;
+import com.example.reto3.service.ScoreService;
 
 @RestController
-@RequestMapping("/product")
-public class ProductController {
-    
+@RequestMapping("api/Score")
+public class ScoreController {
     @Autowired
-    private ProductService productService;
+    private ScoreService scoreService;
 
     @GetMapping("/all")
-    public List<Product> getAll(){
-        return productService.getAll();
+    public List<Score> getAll(){
+        return scoreService.getAll();
     }
 
     @PostMapping("/save")
-    public Product save(@RequestBody Product p){
-        return productService.save(p);
+    public Score save(@RequestBody Score p){
+        return scoreService.save(p);
     }
 }

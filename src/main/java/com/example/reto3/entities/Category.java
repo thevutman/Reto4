@@ -1,6 +1,7 @@
 package com.example.reto3.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -12,8 +13,6 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.List;
-
 @Entity
 @Table(name = "category")
 public class Category implements Serializable{
@@ -22,10 +21,11 @@ public class Category implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String description;
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")   
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
     @JsonIgnoreProperties("category")
-    private List<Product> product;
+    private List<MotorBike> motorBikes;
 
     public Integer getId() {
         return id;
@@ -43,13 +43,21 @@ public class Category implements Serializable{
         this.name = name;
     }
 
-    public List<Product> getProduct() {
-        return product;
+    public String getDescription() {
+        return description;
     }
 
-    public void setProduct(List<Product> product) {
-        this.product = product;
+    public void setDescription(String description) {
+        this.description = description;
     }
-    
+
+    public List<MotorBike> getMotorBikes() {
+        return motorBikes;
+    }
+
+    public void setMotorBikes(List<MotorBike> motorBikes) {
+        this.motorBikes = motorBikes;
+    }
+
     
 }
