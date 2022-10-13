@@ -46,6 +46,22 @@ public class Message implements Serializable{
     public void setClient(Client client) {
         this.client = client;
     }
+
+    public Integer getIdMessage() {
+        return idMessage;
+    }
+
+    public void setIdMessage(Integer idMessage) {
+        this.idMessage = idMessage;
+    }
+
+    public String getMessageText() {
+        return messageText;
+    }
+
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
+    }
     
     
 }
