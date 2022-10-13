@@ -6,23 +6,23 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.example.reto3.entities.MotorBike;
-import com.example.reto3.repository.crudRepository.MotorBikeCrudRepository;
+import com.example.reto3.entities.Motorbike;
+import com.example.reto3.repository.crudRepository.MotorbikeCrudRepository;
 
 @Repository
-public class MotorBikeRepository {
+public class MotorbikeRepository {
     @Autowired
-    private MotorBikeCrudRepository motorBikeCrudRepository;
+    private MotorbikeCrudRepository motorBikeCrudRepository;
 
-    public List<MotorBike> getAll(){
-        return (List<MotorBike>) motorBikeCrudRepository.findAll();
+    public List<Motorbike> getAll(){
+        return (List<Motorbike>) motorBikeCrudRepository.findAll();
     }
 
-    public Optional<MotorBike> geMotorBike(int id){
+    public Optional<Motorbike> geMotorBike(int id){
         return motorBikeCrudRepository.findById(id);
     }
 
-    public MotorBike save(MotorBike c){
+    public Motorbike save(Motorbike c){
         return motorBikeCrudRepository.save(c);
     }
 }

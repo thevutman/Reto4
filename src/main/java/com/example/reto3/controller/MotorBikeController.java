@@ -11,23 +11,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.reto3.entities.MotorBike;
-import com.example.reto3.service.MotorBikeService;
+import com.example.reto3.entities.Motorbike;
+import com.example.reto3.service.MotorbikeService;
 
 @RestController
 @RequestMapping("api/Motorbike")
-public class MotorBikeController {
+public class MotorbikeController {
     @Autowired
-    private MotorBikeService motorBikeService;
+    private MotorbikeService motorBikeService;
 
     @GetMapping("/all")
-    public List<MotorBike> getAll(){
+    public List<Motorbike> getAll(){
         return motorBikeService.getAll();
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public MotorBike save(@RequestBody MotorBike p){
+    public Motorbike save(@RequestBody Motorbike p){
         return motorBikeService.save(p);
     }
 }

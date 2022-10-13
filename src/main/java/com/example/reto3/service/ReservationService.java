@@ -23,15 +23,17 @@ public class ReservationService {
     }
 
     public Reservation save(Reservation p){
-        if(p.getId()==null){
+        if(p.getIdReservation()==null){
+            p.setStatus("creates");
             return reservationRepository.save(p);
         }
         else{
-            Optional<Reservation> e = reservationRepository.geReservation(p.getId());
+            Optional<Reservation> e = reservationRepository.geReservation(p.getIdReservation());
             if(e.isPresent()){
                 return p; 
             }
             else{
+                p.setStatus("creates");
                 return reservationRepository.save(p);
             }
         }

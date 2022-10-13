@@ -18,37 +18,33 @@ public class Message implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idMessage;
+    private String messageText;
 
     @ManyToOne
-    @JoinColumn(name = "motorBikeId")
+    @JoinColumn(name = "motorbikeId")
     @JsonIgnoreProperties("message")
-    private MotorBike motorBike;
+    private Motorbike motorbike;
 
-    private String text;
+    @ManyToOne
+    @JoinColumn(name = "clientId")
+    @JsonIgnoreProperties("message")
+    private Client client;
 
-    public Integer getId() {
-        return id;
+    public Motorbike getMotorbike() {
+        return motorbike;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setMotorbike(Motorbike motorbike) {
+        this.motorbike = motorbike;
     }
 
-    public String getText() {
-        return text;
+    public Client getClient() {
+        return client;
     }
 
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public MotorBike getMotorBike() {
-        return motorBike;
-    }
-
-    public void setMotorBike(MotorBike motorBike) {
-        this.motorBike = motorBike;
+    public void setClient(Client client) {
+        this.client = client;
     }
     
     

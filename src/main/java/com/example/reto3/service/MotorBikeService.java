@@ -6,28 +6,28 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.reto3.entities.MotorBike;
-import com.example.reto3.repository.MotorBikeRepository;
+import com.example.reto3.entities.Motorbike;
+import com.example.reto3.repository.MotorbikeRepository;
 
 @Service
-public class MotorBikeService {
+public class MotorbikeService {
     @Autowired
-    private MotorBikeRepository MotorBikeRepository;
+    private MotorbikeRepository MotorBikeRepository;
 
-    public List<MotorBike> getAll(){
+    public List<Motorbike> getAll(){
         return MotorBikeRepository.getAll();
     }
 
-    public Optional<MotorBike> getMotorBike(int id){
+    public Optional<Motorbike> getMotorBike(int id){
         return MotorBikeRepository.geMotorBike(id);
     }
 
-    public MotorBike save(MotorBike p){
+    public Motorbike save(Motorbike p){
         if(p.getId()==null){
             return MotorBikeRepository.save(p);
         }
         else{
-            Optional<MotorBike> e = MotorBikeRepository.geMotorBike(p.getId());
+            Optional<Motorbike> e = MotorBikeRepository.geMotorBike(p.getId());
             if(e.isPresent()){
                 return p; 
             }

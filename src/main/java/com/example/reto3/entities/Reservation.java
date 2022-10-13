@@ -22,39 +22,31 @@ public class Reservation implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idReservation;
+    private Date startDate;
+    private Date devolutionDate;
+    private String status;
 
     @ManyToOne
-    @JoinColumn(name = "motorBikeId")
+    @JoinColumn(name = "motorbikeId")
     @JsonIgnoreProperties("reservation")
-    private MotorBike motorBike;
+    private Motorbike motorbike;
 
     @ManyToOne
     @JoinColumn(name = "clientId")
     @JsonIgnoreProperties("reservation")
     private Client client;
 
-    private Date startDate;
-    private Date deliveryDate;
-
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "reservation")
     @JsonIgnoreProperties("reservation")
     private List<Score> scores;
 
-    public Integer getId() {
-        return id;
+    public Motorbike getMotorBike() {
+        return motorbike;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public MotorBike getMotorBike() {
-        return motorBike;
-    }
-
-    public void setMotorBike(MotorBike motorBike) {
-        this.motorBike = motorBike;
+    public void setMotorBike(Motorbike motorBike) {
+        this.motorbike = motorBike;
     }
 
     public Client getClient() {
@@ -73,20 +65,44 @@ public class Reservation implements Serializable{
         this.startDate = startDate;
     }
 
-    public Date getDeliveryDate() {
-        return deliveryDate;
-    }
-
-    public void setDeliveryDate(Date deliveryDate) {
-        this.deliveryDate = deliveryDate;
-    }
-
     public List<Score> getScores() {
         return scores;
     }
 
     public void setScores(List<Score> scores) {
         this.scores = scores;
+    }
+
+    public Integer getIdReservation() {
+        return idReservation;
+    }
+
+    public void setIdReservation(Integer idReservation) {
+        this.idReservation = idReservation;
+    }
+
+    public Date getDevolutionDate() {
+        return devolutionDate;
+    }
+
+    public void setDevolutionDate(Date devolutionDate) {
+        this.devolutionDate = devolutionDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Motorbike getMotorbike() {
+        return motorbike;
+    }
+
+    public void setMotorbike(Motorbike motorbike) {
+        this.motorbike = motorbike;
     }
     
     

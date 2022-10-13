@@ -23,11 +23,11 @@ public class MessageService {
     }
 
     public Message save(Message p){
-        if(p.getId()==null){
+        if(p.getIdMessage()==null){
             return messageRepository.save(p);
         }
         else{
-            Optional<Message> e = messageRepository.geMessage(p.getId());
+            Optional<Message> e = messageRepository.geMessage(p.getIdMessage());
             if(e.isPresent()){
                 return p; 
             }
