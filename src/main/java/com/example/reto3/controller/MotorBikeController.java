@@ -15,7 +15,7 @@ import com.example.reto3.entities.MotorBike;
 import com.example.reto3.service.MotorBikeService;
 
 @RestController
-@RequestMapping("api/MotorBike")
+@RequestMapping("api/Motorbike")
 public class MotorBikeController {
     @Autowired
     private MotorBikeService motorBikeService;

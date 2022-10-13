@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,7 +25,8 @@ public class MotorBike implements Serializable{
     private Integer id;
     private String brand;
     private String name;
-    private String year;
+    @Column(name = "years")
+    private Integer year;
     private String description;
 
     @ManyToOne
@@ -64,14 +66,6 @@ public class MotorBike implements Serializable{
         this.name = name;
     }
 
-    public String getYear() {
-        return year;
-    }
-
-    public void setYear(String year) {
-        this.year = year;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -104,5 +98,14 @@ public class MotorBike implements Serializable{
         this.reservations = reservations;
     }
 
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    
     
 }
