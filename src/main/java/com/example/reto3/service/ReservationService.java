@@ -24,7 +24,7 @@ public class ReservationService {
 
     public Reservation save(Reservation p){
         if(p.getIdReservation()==null){
-            p.setStatus("creates");
+            p.setStatus("created");
             return reservationRepository.save(p);
         }
         else{
@@ -33,7 +33,7 @@ public class ReservationService {
                 return p; 
             }
             else{
-                p.setStatus("creates");
+                p.setStatus("created");
                 return reservationRepository.save(p);
             }
         }

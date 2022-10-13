@@ -31,7 +31,7 @@ public class Motorbike implements Serializable{
 
     @ManyToOne
     @JoinColumn(name = "CategoryId")
-    @JsonIgnoreProperties("motorbike")
+    @JsonIgnoreProperties("motorbikes")
     private Category category;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "motorbike")
