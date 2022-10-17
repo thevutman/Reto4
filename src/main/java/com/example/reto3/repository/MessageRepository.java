@@ -27,7 +27,7 @@ public class MessageRepository {
     }
 
     public void delete(Message c){
-        messageCrudRepository.delete(c)
+        messageCrudRepository.delete(c);
     }
 
 }
