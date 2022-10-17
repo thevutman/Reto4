@@ -26,6 +26,6 @@ public class AdminRepository {
         return adminCrudRepository.save(c);
     }
 
-    Public void delete(Admin c{
+    public void delete(Admin c{
         adminCrudRepository.delete(c);
 }
