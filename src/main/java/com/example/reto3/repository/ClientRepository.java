@@ -27,6 +27,6 @@ public class ClientRepository {
     }
 
     public void delete(Client c){
-        clientCrudRepository.delete(c)
+        clientCrudRepository.delete(c);
     }
 }
