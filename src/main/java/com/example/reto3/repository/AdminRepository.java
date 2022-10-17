@@ -28,4 +28,5 @@ public class AdminRepository {
 
     public void delete(Admin c{
         adminCrudRepository.delete(c);
+    }
 }
