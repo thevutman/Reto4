@@ -15,7 +15,7 @@ import com.example.reto3.entities.Message;
 import com.example.reto3.service.MessageService;
 
 @RestController
-@RequestMapping("api/Message")
+@RequestMapping("/api/Message")
 public class MessageController {
     @Autowired
     private MessageService messageService;

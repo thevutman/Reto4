@@ -15,7 +15,7 @@ import com.example.reto3.entities.Category;
 import com.example.reto3.service.CategoryService;
 
 @RestController
-@RequestMapping("api/Category")
+@RequestMapping("/api/Category")
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;

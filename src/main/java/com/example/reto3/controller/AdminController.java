@@ -15,7 +15,7 @@ import com.example.reto3.entities.Admin;
 import com.example.reto3.service.AdminService;
 
 @RestController
-@RequestMapping("api/Admin")
+@RequestMapping("/api/Admin")
 public class AdminController {
     @Autowired
     private AdminService adminService;

@@ -15,7 +15,7 @@ import com.example.reto3.entities.Client;
 import com.example.reto3.service.ClientService;
 
 @RestController
-@RequestMapping("api/Client")
+@RequestMapping("/api/Client")
 public class ClientController {
     @Autowired
     private ClientService clientService;

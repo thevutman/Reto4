@@ -15,7 +15,7 @@ import com.example.reto3.entities.Reservation;
 import com.example.reto3.service.ReservationService;
 
 @RestController
-@RequestMapping("api/Reservation")
+@RequestMapping("/api/Reservation")
 public class ReservationController {
     @Autowired
     private ReservationService reservationService;

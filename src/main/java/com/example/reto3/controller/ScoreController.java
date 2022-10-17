@@ -15,7 +15,7 @@ import com.example.reto3.entities.Score;
 import com.example.reto3.service.ScoreService;
 
 @RestController
-@RequestMapping("api/Score")
+@RequestMapping("/api/Score")
 public class ScoreController {
     @Autowired
     private ScoreService scoreService;
